@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorAccent">#F3000908</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed">#F32003</color>
+    <color name="colorGreen">#12784A</color>
+    <color name="colorGrey">#999999</color>
+    <color name="colorPurple">#5025D1</color>
+    <color name="colorYellow">#FEC537</color>
+
+    <color name="fcmNotificationColor">#12784A</color>
+
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+    <color name="semi_transparent_black">#90000000</color>
+
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="colorFirstSplashText">#2E7D32</color>
+
+
+    <color name="solidCircle">#AAFFFFFF</color>
+    <color name="circleBorder">#50FFFFFF</color>
+
+
+    <color name="fb_blue">#475993</color>
+    <color name="divider">#f5f5f5</color>
+
+
+
+    <color name="colorTextRippleMain">#858484</color>
+
+
+    <color name="colorDescription">#212121</color>
+
+
+    <color name="colorDetailDescription">#050505</color>
+
+
+
+
+    <color name="colorFacts1">#839738</color>
+    <color name="colorFacts2">#968686</color>
+    <color name="colorFacts3">#E9E5DF</color>
+    <color name="colorFacts4">#D8B797</color>
+    <color name="colorFacts5">#D8B794</color>
+    <color name="colorFacts6">#5899CE</color>
+    <color name="colorFacts7">#E7E5E1</color>
+    <color name="colorFacts8">#8F8483</color>
+    <color name="colorFacts9">#747572</color>
+    <color name="colorFacts10">#8C8A98</color>
+    <color name="colorFacts11">#D8CDCB</color>
+
+    <color name="colorIntro1">#E4E2DF</color>
+    <color name="colorIntro2">#AF957E</color>
+    <color name="colorIntro3">#D7D9D8</color>
+    <color name="colorIntro4">#FFFFFF</color>
+    <color name="colorIntro5">#FF7F4D</color>
+    <color name="colorIntro6">#20BAA0</color>
+
+    <color name="colorCompany">#218055</color>
+
+    <color name="colorPrimaryDark">#263547</color>
+
+    <color name="transparentActionBarAndExoPlayerControllerColor">#88000000</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="playButtonBackgroundColor">#000000</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="settingsSubtitleColor">#42000000</color>
+    <color name="dividerColor">#E0E0E0</color>
+
+
+    <color name="colorRedeem01">#35292A</color>
+    <color name="colorRedeem02">#7D7D6D</color>
+    <color name="colorRedeem03">#95A3B7</color>
+    <color name="colorRedeem04">#315379</color>
+    <color name="colorRedeem05">#BEB9A6</color>
+    <color name="colorRedeem06">#AAA390</color>
+    <color name="colorRedeem07">#23281B</color>
+    <color name="colorRedeem08">#D2CABD</color>
+    <color name="colorRedeem09">#0C0A0F</color>
+    <color name="colorRedeem10">#323428</color>
+    <color name="colorRedeem11">#25292C</color>
+    <color name="colorRedeem12">#43495A</color>
+    <color name="colorRedeem13">#A99EAC</color>
+    <color name="colorRedeem14">#939CB1</color>
+    <color name="colorRedeem15">#191712</color>
+    <color name="colorRedeem16">#24395E</color>
+    <color name="colorRedeem17">#C5D0D1</color>
+    <color name="colorRedeem18">#141A2A</color>
+    <color name="colorRedeem19">#BDBEC0</color>
+
+
+
+    <color name="color_image_pdf">#5AC5CA</color>
+    <color name="color_text_pdf">#F27D59</color>
+    <color name="color_qr_pdf">#A58FFD</color>
+    <color name="color_excel_pdf">#6298EC</color>
+
+
+</resources>

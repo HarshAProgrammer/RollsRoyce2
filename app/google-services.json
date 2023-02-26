@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1018499649594",
+    "firebase_url": "https://rolls-royce-cars-default-rtdb.firebaseio.com",
+    "project_id": "rolls-royce-cars",
+    "storage_bucket": "rolls-royce-cars.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018499649594:android:6dd87c0e8bef3b9e2ea503",
+        "android_client_info": {
+          "package_name": "com.rackluxury.rollsroyce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018499649594-opgckuk184mdh7i7vjnvck1po6b4cpm1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rackluxury.rollsroyce",
+            "certificate_hash": "b839793a6c481d7f0d00ccfe069334cc28692cfb"
+          }
+        },
+        {
+          "client_id": "1018499649594-8e3f37ejk903m3gdj59gs9dptduap5u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI4L1bV9s7aSE7gBeAlDidQ8ZLu9nhPQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018499649594-8e3f37ejk903m3gdj59gs9dptduap5u3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
