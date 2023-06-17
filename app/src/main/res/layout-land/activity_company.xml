@@ -401,7 +401,6 @@
 
             </com.ramotion.foldingcell.FoldingCell>
             <com.ramotion.foldingcell.FoldingCell
-                android:id="@+id/folding_cell6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorWhite">

@@ -15,6 +15,9 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+
+
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="22" />
@@ -28,7 +31,7 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
 
     <application
-        android:name=".reddit.Infinity"
+        android:name=".activities.FirebaseApp"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
@@ -42,9 +45,9 @@
         <activity android:name=".activities.BuyCoinsActivity" />
         <activity android:name=".activities.RedeemActivity" />
         <activity android:name=".activities.DailyLoginActivity" />
-        <service android:name=".blog.BroadcastServiceBlog"/>
-        <service android:name=".activities.BroadcastServiceExpensive"/>
-        <service android:name=".video.BroadcastServiceVideo"/>
+        <service android:name=".blog.BroadcastServiceBlog" />
+        <service android:name=".activities.BroadcastServiceExpensive" />
+        <service android:name=".video.BroadcastServiceVideo" />
         <activity android:name=".activities.LoginActivity" />
         <activity
             android:name=".video.VideoCheckerActivity"
@@ -57,7 +60,8 @@
             android:launchMode="singleTop" />
         <service
             android:name=".activities.ExpensiveNotificationService"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECIEVE" />
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -65,7 +69,8 @@
         </service>
         <service
             android:name=".blog.BlogNotificationService"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECIEVE" />
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -73,7 +78,8 @@
         </service>
         <service
             android:name=".video.VideoNotificationService"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECIEVE" />
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -81,7 +87,8 @@
         </service>
         <service
             android:name=".activities.DailyNotificationService"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECIEVE" />
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -95,7 +102,6 @@
             android:name=".activities.SecondSplashScreenActivity"
             android:screenOrientation="portrait" />
 
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/toolbar_home_icon" />
@@ -105,7 +111,8 @@
 
         <activity android:name=".activities.FavouriteCategoriesActivity" />
         <activity android:name=".activities.IntroActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -113,14 +120,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.FavouriteExpensiveActivity" />
-
-
-
         <activity
             android:name=".activities.LoginOrRegisterActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop" />
         <activity android:name=".activities.RegistrationActivity" />
+
         <activity android:name=".activities.ForgotPassword" />
         <activity
             android:name=".activities.HomeActivity"
@@ -132,7 +137,7 @@
             android:theme="@style/AppTheme.SlidrActivityTheme" />
         <activity
             android:name=".activities.ExpensiveActivity"
-            android:parentActivityName=".activities.HomeActivity" />
+            android:parentActivityName="activities.HomeActivity" />
         <activity
             android:name=".activities.ExpensiveDetailActivity"
             android:theme="@style/AppTheme.SlidrActivityTheme" />
@@ -176,7 +181,8 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".activities.AppWidgetProvider">
+        <receiver android:name=".activities.AppWidgetProvider"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -188,7 +194,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.provider"
+            android:authorities="com.rackluxury.rollsroyce.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -196,420 +202,18 @@
                 android:resource="@xml/provider_path" />
         </provider>
 
-        <activity
-            android:name=".reddit.activities.RedditTrendingActivity"
-            android:label="@string/trending_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditPostGalleryActivity"
-            android:label="@string/post_gallery_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditRPANActivity"
-            android:configChanges="orientation|screenSize|layoutDirection"
-            android:label="@string/rpan_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.TranslucentStatusBar"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".reddit.activities.RedditLockScreenActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.AnonymousSubscriptionsActivity"
-            android:label="@string/subscriptions"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.RedditWebViewActivity"
-            android:label=""
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.SuicidePreventionActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.MultiredditSelectionActivity"
-            android:label="@string/multireddit_selection_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.RedditSearchUsersResultActivity"
-            android:label="@string/search_users_result_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.PostFilterUsageListingActivity"
-            android:parentActivityName=".reddit.activities.RedditSettingsActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.RedditPostFilterPreferenceActivity"
-            android:label="@string/post_filter_preference_activity_label"
-            android:parentActivityName=".reddit.activities.RedditSettingsActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.CustomizePostFilterActivity"
-            android:label="@string/customize_post_filter_activity_label"
-            android:parentActivityName=".reddit.activities.RedditSettingsActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.FetchRandomSubredditOrPostActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.GiveAwardActivity"
-            android:label="@string/give_award_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.SelectUserFlairActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.FullMarkdownActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditSubmitCrosspostActivity"
-            android:label="@string/submit_crosspost_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
 
-        <service
-            android:name=".reddit.services.RedditDownloadMediaService"
-            android:enabled="true"
-            android:exported="false" />
-
-        <activity
-            android:name=".reddit.activities.RedditViewRedditGalleryActivity"
-            android:configChanges="orientation|screenSize|layoutDirection"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Draggable" />
-        <activity
-            android:name=".reddit.activities.SendPrivateMessageActivity"
-            android:label="@string/send_private_message_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-
-        <service
-            android:name=".reddit.services.RedditDownloadRedditVideoService"
-            android:enabled="true"
-            android:exported="false" />
-
-        <activity
-            android:name=".reddit.activities.RedditViewPrivateMessagesActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditViewImgurMediaActivity"
-            android:configChanges="orientation|screenSize|layoutDirection"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Draggable" />
-        <activity
-            android:name=".reddit.activities.ReportActivity"
-            android:label="@string/report_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.SelectedSubredditsAndUsersActivity"
-            android:label="@string/selected_subeddits_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditEditMultiRedditActivity"
-            android:label="@string/edit_multi_reddit_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditCustomThemePreviewActivity"
-            android:label="@string/theme_preview_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.SlidableWithTranslucentWindow" />
-        <activity
-            android:name=".reddit.activities.CustomThemeListingActivity"
-            android:label="@string/custom_theme_listing_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.RedditCustomizeThemeActivity"
-            android:label="@string/customize_theme_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar" />
-        <activity
-            android:name=".reddit.activities.RedditSubredditMultiselectionActivity"
-            android:label="@string/subreddit_multiselection_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.CreateMultiRedditActivity"
-            android:label="@string/create_multi_reddit_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditViewMultiRedditDetailActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.AccountSavedThingActivity"
-            android:label="@string/account_saved_thing_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity android:name=".reddit.activities.ShareDataResolverActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="image/*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="video/*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".reddit.activities.RedditSettingsActivity"
-            android:label="@string/settings_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/PreferenceActivityTheme" />
-        <activity
-            android:name=".reddit.activities.RedditInboxActivity"
-            android:label="@string/view_message_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditAccountPostsActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditEditCommentActivity"
-            android:label="@string/edit_comment_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditEditPostActivity"
-            android:label="@string/edit_post_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditFilteredPostsActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditSearchSubredditsResultActivity"
-            android:label="@string/search_subreddits_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity android:name=".reddit.activities.RedditLinkResolverActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="www.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="amp.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="m.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="old.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="new.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="np.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="reddit.app.link"
-                    android:scheme="https" />
-                <data
-                    android:host="redd.it"
-                    android:scheme="https" />
-                <data
-                    android:host="s.reddit.com"
-                    android:scheme="https" />
-                <data
-                    android:host="click.redditmail.com"
-                    android:scheme="https" />
-                <data
-                    android:host="www.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="amp.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="m.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="old.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="new.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="np.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="reddit.app.link"
-                    android:scheme="http" />
-                <data
-                    android:host="redd.it"
-                    android:scheme="http" />
-                <data
-                    android:host="s.reddit.com"
-                    android:scheme="http" />
-                <data
-                    android:host="click.redditmail.com"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".reddit.activities.RedditSearchActivity"
-            android:label="@string/search_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".reddit.activities.RedditRulesActivity"
-            android:label="@string/rules_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditPostVideoActivity"
-            android:label="@string/post_video_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditPostImageActivity"
-            android:label="@string/post_image_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditPostLinkActivity"
-            android:label="@string/post_link_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditSubscribedThingListingActivity"
-            android:label="@string/subscriptions"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditSubredditSelectionActivity"
-            android:label="@string/subreddit_selection_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditPostTextActivity"
-            android:label="@string/post_text_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.RedditCommentActivity"
-            android:label="@string/comment_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".reddit.activities.SearchResultActivity"
-            android:label="@string/search_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.RedditMainActivity"
-            android:label="@string/application_name"
-            android:theme="@style/AppThemeReddit.Launcher"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".reddit.activities.RedditLoginActivity"
-            android:label="@string/login_activity_label"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable" />
-        <activity
-            android:name=".reddit.activities.ViewImageOrGifActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.SlidableWithActionBar" />
-        <activity
-            android:name=".reddit.activities.RedditViewVideoActivity"
-            android:configChanges="orientation|screenSize|layoutDirection"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Draggable" />
-        <activity
-            android:name=".reddit.activities.RedditViewPostDetailActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.Slidable"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".reddit.activities.RedditViewSubredditDetailActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.SlidableWithTranslucentWindow" />
-        <activity
-            android:name=".reddit.activities.RedditViewUserDetailActivity"
-            android:parentActivityName=".reddit.activities.RedditMainActivity"
-            android:theme="@style/AppThemeReddit.SlidableWithTranslucentWindow" />
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.rackluxury.rollsroyce.reddit.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="${applicationId}.androidx-startup"
+            android:authorities="com.rackluxury.rollsroyce.androidx-startup"
             android:exported="false"
-            tools:node="merge">
+            tools:node="remove">
             <meta-data
                 android:name="com.crazylegend.crashyreporter.initializer.CrashyInitializer"
                 android:value="androidx.startup" />
         </provider>
 
-        <service
-            android:name=".reddit.services.SubmitPostService"
-            android:enabled="true"
-            android:exported="false" />
-        <service
-            android:name=".reddit.services.MaterialYouService"
-            android:exported="false" />
+
     </application>
 
 </manifest>

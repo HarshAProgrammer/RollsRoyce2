@@ -55,7 +55,6 @@
                     android:textSize="11sp" />
 
                 <TextView
-                    android:id="@+id/peopleDesDashboard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
@@ -302,7 +301,6 @@
 
                 <!--Native Ad-->
                 <FrameLayout
-                    android:id="@+id/nativeAdFrameLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -584,7 +582,6 @@
                 android:background="#40000000" />
 
             <FrameLayout
-                android:id="@+id/nativeAdFrameLayoutBack"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@id/bottom_view"
@@ -608,7 +605,6 @@
                 android:background="@color/color_image_pdf">
 
                 <TextView
-                    android:id="@+id/txt_exittwo"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_alignParentTop="true"

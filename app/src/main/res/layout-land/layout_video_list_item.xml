@@ -41,7 +41,6 @@
             android:layout_marginBottom="35dp"
             android:contentDescription="@string/volume_on_off_layout_video" />
         <TextView
-            android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

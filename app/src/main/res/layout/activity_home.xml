@@ -37,7 +37,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <TextView
-                    android:id="@+id/companyNameHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_condensed_light"
@@ -49,7 +48,6 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
                 <ImageView
-                    android:id="@+id/ivCoinHome"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_gravity="center"

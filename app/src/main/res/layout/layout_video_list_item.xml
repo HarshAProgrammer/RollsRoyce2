@@ -41,7 +41,6 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
@@ -62,7 +61,6 @@
         android:padding="8dp">
 
         <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/imgChannelPic"
             android:layout_width="42dp"
             android:layout_height="42dp"
             android:src="@drawable/splashscreen" />

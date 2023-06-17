@@ -1,7 +1,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cvYoutubeVideo"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -78,7 +77,6 @@
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/ivYoutubeVideoThumbUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/ivYoutubeVideoShare"
@@ -129,7 +127,6 @@
         </RelativeLayout>
 
         <LinearLayout
-            android:id="@+id/llYoutubeVideoDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/tvYoutubeVideoTitle"

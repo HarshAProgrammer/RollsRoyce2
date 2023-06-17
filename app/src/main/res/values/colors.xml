@@ -66,13 +66,6 @@
 
     <color name="colorPrimaryDark">#263547</color>
 
-    <color name="transparentActionBarAndExoPlayerControllerColor">#88000000</color>
-    <color name="backgroundColor">#FFFFFF</color>
-    <color name="playButtonBackgroundColor">#000000</color>
-    <color name="primaryTextColor">#000000</color>
-    <color name="settingsSubtitleColor">#42000000</color>
-    <color name="dividerColor">#E0E0E0</color>
-
 
     <color name="colorRedeem01">#35292A</color>
     <color name="colorRedeem02">#7D7D6D</color>

@@ -31,7 +31,6 @@
             android:textStyle="bold" />
 
         <RelativeLayout
-            android:id="@+id/relativecoinbalance"
             android:layout_width="320dp"
             android:layout_height="122dp"
             android:layout_alignParentBottom="true"
@@ -53,7 +52,6 @@
                 android:textSize="45sp" />
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/imageView5"
@@ -161,7 +159,6 @@
         android:textSize="15sp"
         android:textStyle="bold" />
     <TextView
-        android:id="@+id/tvApplyInfoRedeem"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

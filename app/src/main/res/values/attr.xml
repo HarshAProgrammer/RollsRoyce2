@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="isTabletReddit">false</bool>
 
     <declare-styleable name="FontStyle">
         <attr name="font_default" format="dimension"/>
