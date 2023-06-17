@@ -64,7 +64,7 @@ public class VideoCheckerActivity extends AppCompatActivity implements Purchases
     private final List<String> skulist = new ArrayList<>();
     private final String categories = "video_checker";
     private TextView timer;
-    private String TAG = "Main";
+    private final String TAG = "Main";
     private SharedPreferences coins;
 
     @Override
@@ -74,8 +74,7 @@ public class VideoCheckerActivity extends AppCompatActivity implements Purchases
         people = findViewById(R.id.peopleNumVideoChecker);
         purchasesRemaining = findViewById(R.id.purchaseNumVideoChecker);
 
-        Random randomPurchase = new Random();
-        int valPurc = randomPurchase.nextInt(10);
+        int valPurc = 5;
         purchasesRemaining.setText(Integer.toString(valPurc));
 
         coins = getSharedPreferences("Rewards", MODE_PRIVATE);
@@ -102,7 +101,7 @@ public class VideoCheckerActivity extends AppCompatActivity implements Purchases
 
 
     }
-    private BroadcastReceiver broadcastReciever = new BroadcastReceiver() {
+    private final BroadcastReceiver broadcastReciever = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             updateGUI(intent);
@@ -245,7 +244,7 @@ public class VideoCheckerActivity extends AppCompatActivity implements Purchases
     private void handlePurchase(Purchase purchase) {
         try {
             if (purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
-                if (purchase.getSku().equals(categories)) {
+                if (purchase.getProducts().equals(categories)) {
                     ConsumeParams consumeParams = ConsumeParams.newBuilder()
                             .setPurchaseToken(purchase.getPurchaseToken())
                             .build();
@@ -299,6 +298,8 @@ public class VideoCheckerActivity extends AppCompatActivity implements Purchases
                             coinsEdit.putString("Coins", String.valueOf(coinCount));
                             coinsEdit.apply();
                             Toasty.success(VideoCheckerActivity.this, "Purchase Successful", Toast.LENGTH_LONG).show();
+                            int valPurc = 4;
+                            purchasesRemaining.setText(Integer.toString(valPurc));
 
                         }
                     });

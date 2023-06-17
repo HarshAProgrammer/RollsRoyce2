@@ -76,7 +76,7 @@
             android:id="@+id/etNameUpdateProfile"
             android:textColor="@color/colorBlack"
             android:fontFamily="@font/open_sans_condensed_light"
-            app:drawableStartCompat="@drawable/ic_person"
+            app:drawableStartCompat="@drawable/ic_profile_main"
             style="@style/EditTextStyle"
             android:hint="@string/username"
             android:inputType="textPersonName"/>

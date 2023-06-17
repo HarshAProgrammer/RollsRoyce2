@@ -45,6 +45,7 @@
                     android:id="@+id/optionsIconImagesDetail"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_options_image_details"
                     android:contentDescription="@string/back"
@@ -189,7 +190,7 @@
         <TextView
             android:id="@+id/tvViewImageDetail"
             android:layout_width="90dp"
-            android:gravity="center"
+            android:gravity="start|center"
             android:layout_height="wrap_content"
             android:textColor="@color/colorWhite"
             android:drawablePadding="5dp"
@@ -205,7 +206,7 @@
         <TextView
             android:id="@+id/tvLikeImageDetail"
             android:layout_width="70dp"
-            android:gravity="center"
+            android:gravity="start|center"
             android:textColor="@color/colorWhite"
             android:drawablePadding="5dp"
             android:layout_height="wrap_content"
@@ -220,7 +221,7 @@
         <TextView
             android:id="@+id/tvCommentImageDetail"
             android:layout_width="70dp"
-            android:gravity="center"
+            android:gravity="start|center"
             android:textColor="@color/colorWhite"
             android:drawablePadding="5dp"
             android:layout_height="wrap_content"
@@ -236,6 +237,7 @@
             android:id="@+id/tvDownloadImageDetail"
             android:layout_width="70dp"
             android:textColor="@color/colorWhite"
+            android:gravity="start|center"
             android:drawablePadding="5dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

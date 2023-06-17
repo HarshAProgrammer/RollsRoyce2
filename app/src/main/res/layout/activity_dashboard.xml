@@ -61,6 +61,8 @@
                     android:fontFamily="@font/open_sans_condensed_light"
                     android:text="@string/online_dashboard"
                     android:textSize="11sp" />
+
+
                 <!--First Four Buttons-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -191,7 +193,7 @@
 
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/redditDashboard"
+                            android:id="@+id/profileDashboard"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="15dp"
@@ -220,7 +222,7 @@
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
                                     android:layout_centerHorizontal="true"
-                                    android:src="@drawable/ic_reddit_main_white" />
+                                    android:src="@drawable/ic_user_main_white" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -232,7 +234,7 @@
                                     android:layout_marginEnd="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/sf_pro_display_medium"
-                                    android:text="Reddit"
+                                    android:text="Profile"
                                     android:textColor="@color/colorWhite" />
 
 
@@ -404,7 +406,7 @@
                                     android:layout_width="35dp"
                                     android:layout_height="35dp"
                                     android:layout_centerHorizontal="true"
-                                    android:src="@drawable/ic_blogs_main_white" />
+                                    android:src="@drawable/ic_blog_main_white" />
 
                                 <TextView
                                     android:layout_width="wrap_content"

@@ -10,7 +10,7 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@drawable/splashscreen"
-        android:contentDescription="@string/image_alert_dialogue" />
+        android:contentDescription="@string/image_alert_dialogue_registration" />
 
     <TextView
         android:textColor="@color/black"

@@ -66,7 +66,6 @@ import com.rackluxury.rollsroyce.blog.BlogActivity;
 import com.rackluxury.rollsroyce.blog.BlogCheckerActivity;
 import com.rackluxury.rollsroyce.facts.FactsActivity;
 import com.rackluxury.rollsroyce.images.ImagesActivity;
-import com.rackluxury.rollsroyce.reddit.activities.RedditMainActivity;
 import com.rackluxury.rollsroyce.video.VideoActivity;
 import com.rackluxury.rollsroyce.video.VideoCheckerActivity;
 import com.rackluxury.rollsroyce.youtube.YouTubeActivity;
@@ -506,9 +505,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.blogNavigation) {
             Blog();
 
-        } else if (id == R.id.redditNavigation) {
-            Reddit();
-
         } else if (id == R.id.profileNavigation) {
             ProfileDisplay();
 
@@ -574,11 +570,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void Reddit() {
-        Intent openBlogFromMain = new Intent(HomeActivity.this, RedditMainActivity.class);
-        startActivity(openBlogFromMain);
-        Animatoo.animateSwipeRight(HomeActivity.this);
-    }
+
 
     private void homeCheckin() {
         finish();
@@ -644,7 +636,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void InAppPurchase() {
-        Intent openBillingFromMain = new Intent(HomeActivity.this, BillingActivity.class);
+        Intent openBillingFromMain = new Intent(HomeActivity.this, com.rackluxury.rollsroyce.activities.BillingActivity.class);
         startActivity(openBillingFromMain);
         Animatoo.animateSwipeRight(HomeActivity.this);
     }

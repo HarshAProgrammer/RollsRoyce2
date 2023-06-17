@@ -95,6 +95,8 @@ public class BuyCoinsActivity extends AppCompatActivity implements PurchasesUpda
                 } else {
                     if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.USER_CANCELED) {
                         Toasty.error(BuyCoinsActivity.this, "Try Purchasing Again", Toast.LENGTH_LONG).show();
+                    } else {
+
                     }
                 }
             }
@@ -195,7 +197,7 @@ public class BuyCoinsActivity extends AppCompatActivity implements PurchasesUpda
     private void handlePurchase(Purchase purchase) {
         try {
             if (purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
-                if (purchase.getSku().equals(coins_gold)) {
+                if (purchase.getProducts().equals(coins_gold)) {
                     ConsumeParams consumeParams = ConsumeParams.newBuilder()
                             .setPurchaseToken(purchase.getPurchaseToken())
                             .build();
@@ -228,6 +230,7 @@ public class BuyCoinsActivity extends AppCompatActivity implements PurchasesUpda
                     SharedPreferences.Editor coinsEdit = coins.edit();
                     coinsEdit.putString("Coins", String.valueOf(coinCount));
                     coinsEdit.apply();
+
                     coins = getSharedPreferences("Rewards", MODE_PRIVATE);
                     currentCoins = coins.getString("Coins", "0");
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -235,7 +238,7 @@ public class BuyCoinsActivity extends AppCompatActivity implements PurchasesUpda
 
                     Toasty.success(BuyCoinsActivity.this, "Purchase Successful", Toast.LENGTH_LONG).show();
                 }
-                if (purchase.getSku().equals(coins_silver)) {
+                if (purchase.getProducts().equals(coins_silver)) {
                     ConsumeParams consumeParams = ConsumeParams.newBuilder()
                             .setPurchaseToken(purchase.getPurchaseToken())
                             .build();
@@ -275,7 +278,7 @@ public class BuyCoinsActivity extends AppCompatActivity implements PurchasesUpda
 
                     Toasty.success(BuyCoinsActivity.this, "Purchase Successful", Toast.LENGTH_LONG).show();
                 }
-                if (purchase.getSku().equals(coins_bronze)) {
+                if (purchase.getProducts().equals(coins_bronze)) {
                     ConsumeParams consumeParams = ConsumeParams.newBuilder()
                             .setPurchaseToken(purchase.getPurchaseToken())
                             .build();
@@ -342,7 +345,6 @@ public class BuyCoinsActivity extends AppCompatActivity implements PurchasesUpda
     public void onBackPressed() {
         finish();
         Animatoo.animateSwipeRight(BuyCoinsActivity.this);
-
     }
 
     @Override

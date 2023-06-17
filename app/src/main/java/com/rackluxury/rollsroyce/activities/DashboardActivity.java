@@ -32,15 +32,13 @@ import com.rackluxury.rollsroyce.blog.BlogActivity;
 import com.rackluxury.rollsroyce.blog.BlogCheckerActivity;
 import com.rackluxury.rollsroyce.facts.FactsActivity;
 import com.rackluxury.rollsroyce.images.ImagesActivity;
-import com.rackluxury.rollsroyce.reddit.activities.RedditMainActivity;
 import com.rackluxury.rollsroyce.video.VideoActivity;
 import com.rackluxury.rollsroyce.video.VideoCheckerActivity;
 
 import java.util.Calendar;
-
-import es.dmoral.toasty.Toasty;
 import java.util.Random;
 
+import es.dmoral.toasty.Toasty;
 
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
@@ -63,18 +61,19 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     private TextView peopleOnline;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
+
         peopleOnline = findViewById(R.id.peopleNumDashboard);
 
         Random randomOnline = new Random();
         int valOnline = randomOnline.nextInt(100000);
         peopleOnline.setText(Integer.toString(valOnline));
+
         setViews();
         greeting();
 
@@ -83,7 +82,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     private void setViews() {
         oneDashboard = findViewById(R.id.homeDashboard);
         twoDashboard = findViewById(R.id.dailyLoginDashboard);
-        threeDashboard = findViewById(R.id.redditDashboard);
+        threeDashboard = findViewById(R.id.profileDashboard);
         fourDashboard = findViewById(R.id.videoDashboard);
         fiveDashboard = findViewById(R.id.imagesDashboard);
         sixDashboard = findViewById(R.id.blogDashboard);
@@ -151,12 +150,13 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 Animatoo.animateSwipeRight(DashboardActivity.this);
                 break;
             case R.id.dailyLoginDashboard:
-                Intent intent2 = new Intent(DashboardActivity.this, com.rackluxury.rollsroyce.activities.DailyLoginActivity.class);
+                finish();
+                Intent intent2 = new Intent(DashboardActivity.this, DailyLoginActivity.class);
                 startActivity(intent2);
                 Animatoo.animateSwipeRight(DashboardActivity.this);
                 break;
-            case R.id.redditDashboard:
-                Intent intent3 = new Intent(DashboardActivity.this, RedditMainActivity.class);
+            case R.id.profileDashboard:
+                Intent intent3 = new Intent(DashboardActivity.this, ProfileActivity.class);
                 startActivity(intent3);
                 Animatoo.animateSwipeRight(DashboardActivity.this);
                 break;

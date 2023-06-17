@@ -5,7 +5,6 @@
     <string name="favourite">Favourite</string>
     <string name="footer">Footer</string>
     <string name="red_heart">Favourite</string>
-    <string name="company_name">RollsRoyce Inc.</string>
     <string name="login">Login</string>
     <string name="username">Username</string>
 
@@ -25,6 +24,9 @@
 
 
     <string name="action_recycler_view">RecyclerView</string>
+    <string name="image_alert_dialogue">Image Alert Dialogue</string>
+    <string name="purchased_description">Item purchased Successfully</string>
+    <string name="purchased_ok">Ok</string>
 
 
     <string name="skip_intro">Skip</string>
@@ -34,7 +36,7 @@
     <string name="description_intro">Description</string>
     <string name="image_introduction_intro">Image Introduction</string>
 
-    <string name="first_splash_text">Trusted to Deliver Excellence.</string>
+    <string name="first_splash_text">A Crown for Every Achievement</string>
 
     <string name="get_started_loginOrRegister_btn_label">Get Started</string>
 
@@ -54,19 +56,19 @@
 
 
     <string name="sign_up_title_registration">Sign up</string>
-    <string name="sign_up_welcome_txt_registration">Hello there !\nWelcome to you</string>
+    <string name="sign_up_welcome_txt_registration">Hello there !\nWelcome to the world of Rolex</string>
     <string name="sign_up_btn_label_registration">Sign up</string>
     <string name="login_label_registration">" Login"</string>
     <string name="full_name_hint_registration">Full Name</string>
-    <string name="phone_no_hint_registration">Phone No.(Optional)</string>
+    <string name="phone_no_hint_registration">Phone No.</string>
     <string name="profile_pic_registration">Profile Pic</string>
     <string name="have_account_registration">Have an account?</string>
-    <string name="image_alert_dialogue">Image Alert Dialogue</string>
+    <string name="image_alert_dialogue_registration">Image Alert Dialogue</string>
     <string name="Description_alert_registration">By Clicking Accept You Agree to our Terms and Condition and Statement of Privacy Policy</string>
     <string name="terms_and_condition_registration">
-Terms and Conditions\n\nBy downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also should not try to translate the app into other languages, or make derivative versions. The app belong to LuxuryRack Inc..We do not own or control RollsRoyce Car Co. Ltd. in any way.\n\nLuxuryRack Inc. is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.\n\nThe [Cars from RollsRoyce] app stores and processes personal data that you have provided to us, in order to provide our Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the [Cars from RollsRoyce] app won’t work properly or at all.\n\nThe app does use third party services that declare their own Terms and Conditions.\n\nLink to Terms and Conditions of third party service providers used by the app\n\nGoogle Play Services\n\nFacebook\n\nYou should be aware that there are certain things that LuxuryRack Inc. will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but LuxuryRack Inc. cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.\n\nIf you’re using the app outside of an area with Wi-Fi, you should remember that your terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.\n\nAlong the same lines, LuxuryRack Inc. cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, LuxuryRack Inc. cannot accept responsibility.\n\nWith respect to LuxuryRack Inc.’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavour to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. LuxuryRack Inc. accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.\n\nAt some point, we may wish to update the app. The app is currently available on Android – the requirements for system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. LuxuryRack Inc. does not promise that it will always update the app so that it is relevant to you and/or works with the Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.\n\nChanges to This Terms and Conditions\n\nWe may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms and Conditions on this page.\n\nThese terms and conditions are effective as of 2020-08-06\n\nContact Us\n\nIf you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us at [rollsroycemotorcars.info@gmail.com].\n\n</string>
+Terms and Conditions\n\nBy downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy, or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also should not try to translate the app into other languages, or make derivative versions. The app belong to LuxuryRack Inc..We do not own or control Rolex Watch Co. Ltd. in any way.\n\nLuxuryRack Inc. is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.\n\nThe [Cars from RollsRoyce] app stores and processes personal data that you have provided to us, in order to provide our Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the [Cars from RollsRoyce] app won’t work properly or at all.\n\nThe app does use third party services that declare their own Terms and Conditions.\n\nLink to Terms and Conditions of third party service providers used by the app\n\nGoogle Play Services\n\nFacebook\n\nYou should be aware that there are certain things that LuxuryRack Inc. will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but LuxuryRack Inc. cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.\n\nIf you’re using the app outside of an area with Wi-Fi, you should remember that your terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.\n\nAlong the same lines, LuxuryRack Inc. cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, LuxuryRack Inc. cannot accept responsibility.\n\nWith respect to LuxuryRack Inc.’s responsibility for your use of the app, when you’re using the app, it’s important to bear in mind that although we endeavour to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. LuxuryRack Inc. accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.\n\nAt some point, we may wish to update the app. The app is currently available on Android – the requirements for system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. LuxuryRack Inc. does not promise that it will always update the app so that it is relevant to you and/or works with the Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.\n\nChanges to This Terms and Conditions\n\nWe may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms and Conditions on this page.\n\nThese terms and conditions are effective as of 2020-08-06\n\nContact Us\n\nIf you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us at [RolexWatchessa@gmail.com].\n\n</string>
     <string name="privacy_policy_registration">
-Privacy Policy\n\nLuxuryRack Inc. built the [Cars from RollsRoyce] app as a Commercial app. This SERVICE is provided by LuxuryRack Inc. and is intended for use as is.\n\nThis page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.\n\nIf you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.\n\nThe terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at [Cars from RollsRoyce] unless otherwise defined in this Privacy Policy.\n\nInformation Collection and Use\n\nFor a better experience, while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to Name, Phone Number, Email Address, Picture. The information that we request will be retained by us and used as described in this privacy policy.\n\nThe app does use third party services that may collect information used to identify you.\n\nLink to privacy policy of third party service providers used by the app\n\nGoogle Play Services\n\nFacebook\n\nLog Data\n\nWe want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.\n\nCookies\n\nCookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your devices internal memory.\n\nThis Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.\n\nService Providers\n\nWe may employ third–party companies and individuals due to the following reasons:\n\nTo facilitate our Service;\n\nTo provide the Service on our behalf;\n\nTo perform Service–related services; or\n\nTo assist us in analyzing how our Service is used.\n\nWe want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.\n\nSecurity\n\nWe value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100 percent secure and reliable, and we cannot guarantee its absolute security.\n\nLinks to Other Sites\n\nThis Service may contain links to other sites. If you click on a third–party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third–party sites or services.\n\nChildren’s Privacy\n\nThese Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.\n\nChanges to This Privacy Policy\n\nWe may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.\n\nThis policy is effective as of 2020–08–06\n\nContact Us\n\nIf you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at [rollsroycemotorcars.info@gmail.com].\n\n\n\n</string>
+Privacy Policy\n\nLuxuryRack Inc. built the [Cars from RollsRoyce] app as a Commercial app. This SERVICE is provided by LuxuryRack Inc. and is intended for use as is.\n\nThis page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.\n\nIf you choose to use our Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that we collect is used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.\n\nThe terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at [Cars from RollsRoyce] unless otherwise defined in this Privacy Policy.\n\nInformation Collection and Use\n\nFor a better experience, while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to Name, Phone Number, Email Address, Picture. The information that we request will be retained by us and used as described in this privacy policy.\n\nThe app does use third party services that may collect information used to identify you.\n\nLink to privacy policy of third party service providers used by the app\n\nGoogle Play Services\n\nFacebook\n\nLog Data\n\nWe want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.\n\nCookies\n\nCookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your devices internal memory.\n\nThis Service does not use these “cookies” explicitly. However, the app may use third party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.\n\nService Providers\n\nWe may employ third–party companies and individuals due to the following reasons:\n\nTo facilitate our Service;\n\nTo provide the Service on our behalf;\n\nTo perform Service–related services; or\n\nTo assist us in analyzing how our Service is used.\n\nWe want to inform users of this Service that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.\n\nSecurity\n\nWe value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100 percent secure and reliable, and we cannot guarantee its absolute security.\n\nLinks to Other Sites\n\nThis Service may contain links to other sites. If you click on a third–party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third–party sites or services.\n\nChildren’s Privacy\n\nThese Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.\n\nChanges to This Privacy Policy\n\nWe may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.\n\nThis policy is effective as of 2020–08–06\n\nContact Us\n\nIf you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at [RolexWatchessa@gmail.com].\n\n\n\n</string>
     <string name="accept_dialogue_registration">Accept</string>
     <string name="decline_dialogue_registration">Decline</string>
 
@@ -81,29 +83,27 @@ Privacy Policy\n\nLuxuryRack Inc. built the [Cars from RollsRoyce] app as a Comm
     <string name="sort">Sort</string>
     <string name="categories_detail_image">RollsRoyce Detail Image</string>
     <string name="main_image">RollsRoyce Image</string>
-    <string name="car_name">RollsRoyce Name</string>
-    <string name="car_price">RollsRoyce Price</string>
-    <string name="car_description">RollsRoyce Description</string>
-    <string name="car_name_categories_detail">RollsRoyce Car Name</string>
+    <string name="watch_name">RollsRoyce Name</string>
+    <string name="watch_price">RollsRoyce Price</string>
+    <string name="watch_description">RollsRoyce Description</string>
+    <string name="watch_name_categories_detail">RollsRoyce Watch Name</string>
     <string name="detail_categories_description">RollsRoyce Detail Description</string>
     <string name="this_is_the_title_layout_video">This is the title</string>
     <string name="volume_on_off_layout_video">VolumeOnOff</string>
     <string name="thumbnail_layout_video">Thumbnail</string>
-    <string name="toolbar_home">RollsRoyce</string>
+    <string name="toolbar_home">Rolex</string>
     <string name="sign_out_description_home">Do you really want to Sign Out?</string>
-    <string name="purchased_description">Item purchased Successfully</string>
-    <string name="purchased_ok">Ok</string>
     <string name="sign_out_yes_home">Yes</string>
     <string name="sign_out_no_home">No</string>
     <string name="most_expensive_nav_home">Most Expensive</string>
     <string name="images_nav_home">Image Library</string>
     <string name="videos_nav_home">Video Library</string>
+    <string name="youtube_videos_nav_home">Youtube Video Library</string>
     <string name="blog_nav_home">Blog </string>
-    <string name="reddit_nav_home">Reddit </string>
     <string name="profile_nav_home">Profile</string>
 
 
-    <string name="buy_us_a_car_nav_home">Buy Us A Car</string>
+    <string name="buy_us_a_watch_nav_home">Buy Us A Watch</string>
     <string name="facts_about_us_nav_home">Facts About Us</string>
     <string name="sign_out_nav_home">SignOut</string>
     <string name="like_us_on_facebook_nav_home">Like Us On Facebook</string>
@@ -113,11 +113,11 @@ Privacy Policy\n\nLuxuryRack Inc. built the [Cars from RollsRoyce] app as a Comm
     <string name="company_nav_home">Company</string>
 
 
-    <string name="toolbar_expensive">Expensive Motor Cars</string>
+    <string name="toolbar_expensive">Expensive Watches</string>
     <string name="toolbar_favourite_expensive">Favourites</string>
     <string name="toolbar_favourite_categories">Favourites</string>
     <string name="main_image_expensive">RollsRoyce Image</string>
-    <string name="name_detail_expensive_detail">RollsRoyce Car Name</string>
+    <string name="name_detail_expensive_detail">RollsRoyce Watch Name</string>
     <string name="detail_expensive_description">RollsRoyce Detail Description</string>
 
 
@@ -151,43 +151,71 @@ Privacy Policy\n\nLuxuryRack Inc. built the [Cars from RollsRoyce] app as a Comm
 
 
     <string name="buy_billing">Buy</string>
-    <string name="success_billing">Thank You For The Car</string>
-    <string name="status_billing">Buy us a Car</string>
+    <string name="success_billing">Thank You For The Watch</string>
+    <string name="status_billing">Buy us a Watch</string>
 
     <string name="tvCompanyHeading1">
-Classiest design and automotive mascot    </string>
-    <string name="tvCompanyDescription1">Rolls-Royce cars carry hefty price tags but with a design and mascot like no other. Specifically, the tall body of an RR features a long lean hood bearing an ornamental emblem - the Spirit of Ecstasy. It shows a woman leaning forward with her arms outstretched behind and above and gives an extremely premium feel, something that no other automobile has on offer.
+    Why are Rolex watches so valuable?
+    </string>
+    <string name="tvCompanyDescription1">
+    People often wonder why Rolex watches are so expensive. What is so special about the Swiss manufacturer to explain the price of its high-end mechanical watches?\n\n
+Beyond timekeeping, a Rolex watch is an object of desire and aspiration. A symbol of achievement and success. A gratifying luxury indulgences.\n\n
+Behind the brand, the Rolex company operates in a very different fashion from most of the other watch manufacturers in the world. The company is privately held and is set up as a charity. Rolex is currently ranking number five on our list of the most popular luxury brands in the world.\n\n
+So, what makes Rolex watches so expensive? In our opinion, it’s a combination of four different factors.\n\n
 
     </string>
 
     <string name="tvCompanyHeading2">
-    Premium high-quality materials
+    Leading innovation
     </string>
     <string name="tvCompanyDescription2">
-    Another thing that makes Rolls-Royce cars special is the use of best-in-class materials. Other premium six-figure cars manufacturers may cut corners, but a Rolls-Royce is just what it promises - premium leather seats made from bull hide, wood-made dashboard, high-quality metal components, customizable gold-made emblem, et al.The quality of components on a Rolls-Royce car will not ever disappoint you.
+    Rolex owns several labs at its headquarter offices in Geneva. Their in-house researchers work on new watches, of course, but also on new and more efficient manufacturing techniques.\n\n
     </string>
     <string name="tvCompanyHeading3">
-    Starlight roof for a ride like no other
+    Rare and precious materials
     </string>
     <string name="tvCompanyDescription3">
-    The next best thing about Rolls-Royce is its ability to provide you with the experience of a starlit roof. Yes, most RR models come with an option to employ a complex system of hand-stitched optical fibers to replicate the view of the night sky on the roof. It creates an illusion but looks completely realistic.
+    Rolex produces its steel, gold, and platinum in-house. They developed unique manufacturing processes to create stainless steel watches in 904L steel as it’s more robust and maintains its polish look over time. They also transform raw 24k gold plates into 18k yellow, white, or rose gold materials (called Everose gold).\n\n
+Rolex also has its gemological department to buy, test, cut, and place diamonds and precious stones on its watches. Each stone is carefully hand-selected and handset using the same processes as the world’s most renowned jewellery brands.\n\n
 
     </string>
     <string name="tvCompanyHeading4">
-Meter to show power being utilized
+    Outstanding manufacturing process
     </string>
     <string name="tvCompanyDescription4">
-    Rolls-Royce cars churn out immense power with their highly-capable V12 engines and can go real quick in no time. However, to ensure that the driver remains in control, the automaker provides a power indicator. This analog meter takes power output information from an onboard computer and shows how much power is being utilized at a time and how much is in reserve.
+    Rolex has perfected its watch manufacturing process to use both machines and humans in the most efficient way possible. Every Rolex movement and bracelet are still assembled by hand, even though robots and machines are used along the way to assist technicians.\n\n
     </string>
     <string name="tvCompanyHeading5">
-    Minimalistic dashboard controls
+    Dedication, time and attention to details
     </string>
     <string name="tvCompanyDescription5">
-    Finally, it is the interior design that makes Rolls-Royce cars special. Every single Rolls-Royce model thrives on minimalism and offers just enough functions to give a complete driving experience. The sliding wooden panel hides extra controls and infotainment buttons, offering the perfect mix of high-end technology and elegance. Simply put, a Rolls-Royce does not bombard you with technology, which makes it pretty unique
+    From the categorisation of raw materials to the assembly and testing, it takes about a year to make a single Rolex watch.\n\n
+Just take the dial creation as an example. After extensive testing, Rolex found that humans were better at positioning markers on a dial than robots. So, every dial is still crafted by hand. The finished categories is then dropped from 20 cm up in the air to ensure that everything is holding as expected.\n\n
+Because Rolex sells about a million watches per year, the time they spend producing each watch is remarkable.\n\n
+
     </string>
     <string name="tvCompanyHeading6">
+    Are Rolex watches a good investment?
     </string>
     <string name="tvCompanyDescription6">
+    The price of some of the most expensive Rolex watches sold over the past five years is incredible. Especially when you consider the price that they were first bought at. Some collectors made it their specialty to invest in rare Rolexes to sell them back with a significant gain a few years later.\n\n
+Most contemporary Rolex models will probably not gain the same value in 50 years but they still maintain excellent resale value. The price of a second-hand Rolex watch with original papers and box is indeed very close to the original selling price.\n\n
+When looking at our list of the most expensive Rolex watches, it’s clear that four factors drive value and speculation:\n\n
+1.	Rarity of the watch design\n
+2.	Fame of its previous owner\n
+3.	Quality of its materials\n
+4.	Overall condition of the watch\n\n
+Casual observers might have the impression that the price of Rolex watches has also increased over the past few years. You might have heard that the original Submariners did not cost more than $200 in the late 50s. But when taking into account the inflation over the past 60 years, we see that Rolex has maintained the price of its watches fairly stable.\n\n
+ \n
+Taking the entry model stainless steel Submariner no date as an example, we see indeed that its price has “only” increased 6.65 fold over the entire period.\n\n
+So, should you buy a Rolex as an investment? It depends on your investment goals, experience, and time frame. If you want a great watch that will maintain its value, a contemporary Rolex is a great option. As would a Patek Philippe or an Audemars Piguet, for example.\n\n
+If you only want to treat it as an investment, a historical piece will be a better fit but it’s a risky business. You’ll need to be able to distinguish an authentic expensive Rolex from the many fake that are sold online. You’ll also need to have a good sense of what might increase in value over the coming years. And you’ll need to be able to time the resale to maximize your profit. It’s doable if you have those skills but we would not recommend it to anyone.\n
+
+
+    </string>
+    <string name="tvCompanyHeading7">
+    </string>
+    <string name="tvCompanyDescription7">
     </string>
     <string name="tvCompanySpacing">
         \n\n\n\n\n\n\n\n\n\n
@@ -204,7 +232,7 @@ Meter to show power being utilized
     <string name="image_privacy_about_us">Image Privacy</string>
     <string name="image_terms_about_us">Image Terms</string>
     <string name="image_feedback_about_us">Image Feedback</string>
-    <string name="app_widget">World of RollsRoyce</string>
+    <string name="app_widget">World of Rolex</string>
     <string name="name_fav_expensive">Name Favorite Expensive</string>
     <string name="image_fav_expensive">Image Fav Expensive</string>
     <string name="name_fav_categories">Name Favorite Categories</string>
@@ -222,29 +250,28 @@ Meter to show power being utilized
 
     <string name="share">Share</string>
 
-    <string name="youtube_videos_nav_home">Youtube Videos</string>
+    <string name="company_name">RollsRoyce Inc.</string>
 
-    <string name="advantageBlog"><font fgcolor='#0084ff'>•</font> Read the best Blogs written on Rolls-Royce from Top Notch Editors and get 100,000 coins.</string>
-    <string name="advantageVideo"><font fgcolor='#0084ff'>•</font> Watch the best Showcase Videos of Rolls-Royce Cars and get 100,000 coins.</string>
-    <string name="advantageExpensive"><font fgcolor='#0084ff'>•</font> Discover the Most Expensive Cars from Rolls-Royce and get 100,000 coins.</string>
+
+    <string name="advantageBlog"><font fgcolor='#0084ff'>•</font> Read the best Blogs written on Rolex from Top Notch Editors and get 100,000 coins.</string>
+    <string name="advantageVideo"><font fgcolor='#0084ff'>•</font> Watch the best Showcase Videos of Rolex Watches and get 100,000 coins.</string>
+    <string name="advantageExpensive"><font fgcolor='#0084ff'>•</font> Discover the Most Expensive Cars from RollsRoyce and get 100,000 coins.</string>
     <string name="purchase_information_description">This item can only be purchased by first 100 Users.</string>
     <string name="purchase_information_timer">Get enrolled to our Exclusive Waiting List.</string>
-    <string name="checker_people_description">Users currently looking at this Product</string>
-    <string name="checker_purchase_description">Users remaining who can purchase</string>
+    <string name="checker_people_description"> Users are currently looking at this Product</string>
+    <string name="checker_purchase_description"> Users are remaining who can purchase this Product</string>
     <string name="loginorregisterInformation">Swipe Right to Login \n Swipe Left to Register</string>
     <string name="redeem_image_redeems">Redeem Image</string>
     <string name="title_redeems">Redeem Title</string>
     <string name="redeem_price_redeems">Redeem Price</string>
-    <string name="loginOrRegister_welcome_txt">Welcome to Rolls-Royce,\nThe world\'s most prestigious and versatile Motor Car Company.\nFor those who demand only the best of what life has to offer.</string>
+    <string name="loginOrRegister_welcome_txt">Welcome to Rolex,\nThe world\'s most prestigious and versatile Watch Company.\nFor those who demand only the best of what life has to offer.</string>
     <string name="dialogue_redeem">You have Successfully Applied to our Waiting List</string>
     <string name="redeem_information">Apply Now to Join our Exclusive Waiting list for this Watch</string>
-    <string name="image_alert_dialogue_registration">Image Alert Dialogue</string>
     <string name="redeem_apply_information">500,000 Coins will be used</string>
-    <string name="online_dashboard">Users Online</string>
+    <string name="online_dashboard">Users Currently Online</string>
     <string name="online_on_screen">Users on this Screen</string>
     <string name="facts_toolbar_facts">Facts About us</string>
-    <string name="company_toolbar_company">Rolls-Royce</string>
-
+    <string name="company_toolbar_company">Rolex</string>
 
 
 </resources>

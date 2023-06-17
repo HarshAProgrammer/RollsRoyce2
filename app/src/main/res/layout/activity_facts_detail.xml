@@ -205,10 +205,10 @@
 
                         <TextView
                             android:id="@+id/tvFactsDescription"
-                            android:scrollbars="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
+                            android:scrollbars="vertical"
                             android:fontFamily="@font/open_sans_condensed_light"
                             android:paddingStart="40dp"
                             android:paddingEnd="40dp"

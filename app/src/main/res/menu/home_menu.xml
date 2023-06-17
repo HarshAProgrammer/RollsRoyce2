@@ -37,7 +37,7 @@
     </item>
     <item
         android:id="@+id/favourite_categories"
-        android:icon="@drawable/ic_sort_price_low_to_high"
+        android:icon="@drawable/ic_reaction_heart"
         android:title="@string/favourite" />
 
 

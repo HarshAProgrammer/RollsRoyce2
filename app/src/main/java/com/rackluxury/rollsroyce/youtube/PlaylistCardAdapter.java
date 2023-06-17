@@ -51,7 +51,6 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
         public final TextView mDurationText;
         public final TextView mViewCountText;
         public final TextView mLikeCountText;
-        public final TextView mDislikeCountText;
 
         public ViewHolder(View v) {
             super(v);
@@ -64,7 +63,6 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
             mDurationText = v.findViewById(R.id.tvYoutubeVideoDuration);
             mViewCountText= v.findViewById(R.id.tvYoutubeVideoViewCount);
             mLikeCountText = v.findViewById(R.id.tvYoutubeVideoLikeCount);
-            mDislikeCountText = v.findViewById(R.id.tvYoutubeVideoDislikeCount);
         }
     }
 
@@ -79,8 +77,7 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
         // inflate a card layout
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.youtube_video_card, parent, false);
         // populate the viewholder
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -132,7 +129,8 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
         // set the video statistics
         holder.mViewCountText.setText(sFormatter.format(videoStatistics.getViewCount()));
         holder.mLikeCountText.setText(sFormatter.format(videoStatistics.getLikeCount()));
-        holder.mDislikeCountText.setText(sFormatter.format(videoStatistics.getDislikeCount()));
+
+
 
         if (mListener != null) {
             // get the next playlist page if we're at the end of the current page and we have another page to get
@@ -141,7 +139,7 @@ public class PlaylistCardAdapter extends RecyclerView.Adapter<PlaylistCardAdapte
                 holder.itemView.post(new Runnable() {
                     @Override
                     public void run() {
-                        mListener.onLastItem(position, nextPageToken);
+                        mListener.onLastItem();
                     }
                 });
             }
