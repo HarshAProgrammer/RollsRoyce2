@@ -82,7 +82,6 @@ public class IntroActivity extends AppCompatActivity {
         mList.add(new ScreenItem("Video Library","Watch our video library, showcasing lots of display videos.",R.drawable.video_intro));
         mList.add(new ScreenItem("Facts","Know Interesting Facts",R.drawable.facts_intro));
         mList.add(new ScreenItem("Why we are at the top","Recognize our core values",R.drawable.enterprise_intro));
-        mList.add(new ScreenItem("Reddit","Explore our Subreddit r/RollsRoyce",R.drawable.reddit_intro));
         mList.add(new ScreenItem("Blogs","Read Blogs from TopNotch Editors",R.drawable.img_blog_checker));
 
         screenPager = findViewById(R.id.vpScreenIntro);
@@ -94,8 +93,7 @@ public class IntroActivity extends AppCompatActivity {
                 getResources().getColor(R.color.colorIntro2),
                 getResources().getColor(R.color.colorIntro3),
                 getResources().getColor(R.color.colorIntro4),
-                getResources().getColor(R.color.colorIntro5),
-                getResources().getColor(R.color.colorIntro6)
+                getResources().getColor(R.color.colorIntro5)
         };
         screenPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

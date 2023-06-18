@@ -42,31 +42,37 @@
 
 
 
-    <color name="colorFacts2">#CBCC8160</color>
-    <color name="colorFacts3">#0C4A81</color>
+    <color name="colorFacts1">#839738</color>
+    <color name="colorFacts2">#968686</color>
+    <color name="colorFacts3">#E9E5DF</color>
+    <color name="colorFacts4">#D8B797</color>
+    <color name="colorFacts5">#D8B794</color>
+    <color name="colorFacts6">#5899CE</color>
+    <color name="colorFacts7">#E7E5E1</color>
+    <color name="colorFacts8">#8F8483</color>
+    <color name="colorFacts9">#747572</color>
+    <color name="colorFacts10">#8C8A98</color>
+    <color name="colorFacts11">#D8CDCB</color>
 
-    <color name="colorRedeem1">#B6D5E5</color>
-    <color name="colorRedeem2">#485B87</color>
-    <color name="colorRedeem3">#3F5B88</color>
-    <color name="colorRedeem4">#D4E5ED</color>
-    <color name="colorRedeem5">#4D4F4F</color>
-    <color name="colorRedeem6">#000000</color>
-    <color name="colorRedeem7">#013C1C</color>
-    <color name="colorRedeem8">#015638</color>
-    <color name="colorRedeem9">#355450</color>
-    <color name="colorRedeem10">#CDCED0</color>
-    <color name="colorRedeem11">#6E4557</color>
-    <color name="colorRedeem12">#ECE6E6</color>
-    <color name="colorRedeem13">#B5B5B1</color>
-    <color name="colorRedeem14">#1E1C1F</color>
-    <color name="colorRedeem15">#D7D1CC</color>
-    <color name="colorRedeem16">#A8A59A</color>
-    <color name="colorRedeem17">#28435F</color>
-    <color name="colorRedeem18">#F0DBB3</color>
-    <color name="colorRedeem19">#27425D</color>
-    <color name="colorRedeem20">#1B1B1B</color>
-    <color name="colorRedeem21">#3B5451</color>
-    <color name="colorRedeem22">#F0DBB3</color>
+    <color name="colorRedeem01">#35292A</color>
+    <color name="colorRedeem02">#7D7D6D</color>
+    <color name="colorRedeem03">#95A3B7</color>
+    <color name="colorRedeem04">#315379</color>
+    <color name="colorRedeem05">#BEB9A6</color>
+    <color name="colorRedeem06">#AAA390</color>
+    <color name="colorRedeem07">#23281B</color>
+    <color name="colorRedeem08">#D2CABD</color>
+    <color name="colorRedeem09">#0C0A0F</color>
+    <color name="colorRedeem10">#323428</color>
+    <color name="colorRedeem11">#25292C</color>
+    <color name="colorRedeem12">#43495A</color>
+    <color name="colorRedeem13">#A99EAC</color>
+    <color name="colorRedeem14">#939CB1</color>
+    <color name="colorRedeem15">#191712</color>
+    <color name="colorRedeem16">#24395E</color>
+    <color name="colorRedeem17">#C5D0D1</color>
+    <color name="colorRedeem18">#141A2A</color>
+    <color name="colorRedeem19">#BDBEC0</color>
 
 
 
