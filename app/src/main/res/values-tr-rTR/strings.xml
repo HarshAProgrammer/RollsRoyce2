@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Since Turkish is an agglutinative lang, there is no good translation.
+Eng: Since 2010
+Tr: 2010'dan beri
+This translation does it work well in this kinda format. People use "since" in signs/pamphlets in Turkey because of this. I decided to use the word "since" as well. -->
+    <string name="search">"Arama"</string>
+    <string name="ok">"Tamam"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Neyi kastettiğini anlamadığım için böyle bıraktım. -->
+    <string name="share">"Paylaş"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- What is the scroll? -->
+
+    <!-- What is it? -->
+
+    <!-- Fuzzy -->
+</resources>

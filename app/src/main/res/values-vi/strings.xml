@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- what the different between Unsubscribe and Unsubscribed -->
+    <string name="search">"Tìm kiếm"</string>
+    <string name="ok">"OK"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+    <string name="share">"Chia sẻ"</string>
+</resources>

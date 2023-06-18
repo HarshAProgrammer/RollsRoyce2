@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Everyone in france uses the english word for subreddits -->
+
+    <!-- "Poste" isn't an equivalent to post. I'd use "publication" here but it's kind of long. The english word "Post" should be understood by everyone -->
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+    <string name="search">"Rechercher"</string>
+
+    <!-- What's the context here ? -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+    <string name="ok">"OK"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Not sure what technology vector is supposed to mean -->
+
+    <!-- When is this shown ? -->
+
+    <!-- What exactly is "here" ? -->
+    <string name="share">"Partager"</string>
+
+    <!-- Removed '/!\'  because it was causing weird characters inside the app
+
+https://s3.eu-west-1.amazonaws.com/po-pub/i/dFZKKms9HbrDGOlcgW9QTcwF.jpg -->
+
+    <!-- Same problem as "chip": these terms are used by Material Design Android so I'm not sure there is a correct translation... Maybe we shouldn't translate? and keep something like that: "Couleur d'arrière-plan de Card View" ? -->
+
+    <!-- Not sure how to translate correctly "Fully-Collapsed Comment". -->
+
+    <!-- I don't think we need to translate "flair" and "tag"? -->
+
+    <!-- Probably not a mistake but just to be sure... It's about dark theme, right? Because the description says "light_status_bar" -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- "Publication" is probably the most accurate translation but it seems it's too long... -->
+
+    <!-- A completely different joke -->
+
+    <!-- Not sure about the tense.. -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+</resources>

@@ -21,17 +21,17 @@
             android:layout_height="match_parent"
             android:weightSum="5.5"
             android:orientation="vertical">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/ivCategoriesRecyclerRowItemImage"
-                    android:layout_weight="4"
-                    android:contentDescription="@string/main_image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/splashscreen"
-                    >
-                </ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/ivCategoriesRecyclerRowItemImage"
+                android:layout_weight="4"
+                android:contentDescription="@string/main_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/splashscreen"
+                >
+            </ImageView>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -56,7 +56,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:maxLines="2"
-                        android:text="@string/watch_name"
+                        android:text="@string/car_name"
                         android:textColor="@color/colorBlack"
                         android:textSize="12sp"
                         android:textStyle="bold">
@@ -68,7 +68,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:maxLines="0"
-                        android:text="@string/watch_description"
+                        android:text="@string/car_description"
                         android:textColor="@color/colorDescription"
                         android:textSize="12sp"
                         android:visibility="gone">
@@ -95,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:drawablePadding="0dp"
                         android:gravity="start"
-                        android:text="@string/watch_price"
+                        android:text="@string/car_price"
                         android:textColor="@color/colorGreen"
                         android:textSize="13sp"
                         android:textStyle="italic"
@@ -135,8 +135,8 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-            
-        
+
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

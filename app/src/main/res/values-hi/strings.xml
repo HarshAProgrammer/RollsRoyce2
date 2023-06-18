@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Or one can use as is form in Devnagari script ' पी एम भेजें' -->
+
+    <!-- Fuzzy -->
+
+    <!-- क्रमबन्धन? -->
+
+    <!-- Using For??
+Actually It Means स्वभाव In Hindi
+Behavior -->
+
+    <!-- I translated it to 'timeless' or 'irrelevant of time'. -->
+
+    <!-- Can someone tell me the context of the term 'locked'? -->
+    <string name="search">"खोज "</string>
+    <string name="ok">"ठीक है "</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Shouldn't it be "'Deleted Successfully'? -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Are those commands or a state? Like 'search' is a state in 'search opration' but is a command in 'search something'. Hindi has different appraoch for these two. -->
+
+    <!-- डहाना can be good alt. -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+    <string name="share">"साझा करें "</string>
+
+    <!-- What's markdown though? -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+</resources>

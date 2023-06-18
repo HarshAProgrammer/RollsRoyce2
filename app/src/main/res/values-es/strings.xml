@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Bandeja de Entrada -->
+
+    <!-- Ocurrió un error al actualizar la publicación -->
+
+    <!-- Bandeja de Entrada -->
+    <string name="search">"Buscar"</string>
+    <string name="ok">"OK"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Correcting the Sentence, from imperative to enunciated sentence -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Galardón means award
+Premio means prize, so it's better suited the first word instead of the second one -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- The translation is repetitive, removed a word for clarifying, it is a literal translation from English -->
+    <string name="share">"Compartir"</string>
+
+    <!-- It is a literal translation from English, translating for clarity -->
+
+    <!-- Raw text is without format, so since in Spanish there is no translation aplicable for Raw (Except for food) it is redone -->
+
+    <!-- For this one I think it refers to the secondary text, not the secondary color as the translation says -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Ocultar Subreddits -->
+
+    <!-- Fuzzy -->
+</resources>
