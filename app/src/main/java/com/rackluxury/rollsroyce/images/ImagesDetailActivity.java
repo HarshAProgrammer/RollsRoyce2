@@ -1,7 +1,15 @@
 package com.rackluxury.rollsroyce.images;
 
+import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_COMMENTS;
+import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_DOWNLOADS;
+import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_LIKES;
+import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_URL;
+import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_VIEWS;
+
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.WallpaperManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -11,13 +19,11 @@ import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.AudioAttributes;
-import android.media.AudioManager;
 import android.media.SoundPool;
 import android.net.Uri;
-import android.os.Build;
-import es.dmoral.toasty.Toasty;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.Settings;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,11 +33,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat;
 
@@ -53,12 +61,6 @@ import java.io.IOException;
 
 import es.dmoral.toasty.Toasty;
 
-import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_URL;
-import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_VIEWS;
-import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_LIKES;
-import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_COMMENTS;
-import static com.rackluxury.rollsroyce.images.ImagesActivity.EXTRA_DOWNLOADS;
-
 public class ImagesDetailActivity extends AppCompatActivity {
 
     private PhotoView photoView;
@@ -67,7 +69,12 @@ public class ImagesDetailActivity extends AppCompatActivity {
     private FileOutputStream outputStream;
     private Bitmap bitmap;
     private BitmapDrawable drawable;
-    private static final int PERMISSION_STORAGE_CODE = 1000;
+    String[] required_permission = new String[]{
+            Manifest.permission.READ_MEDIA_IMAGES,
+    };
+
+    boolean is_storage_image_permitted = false;
+    String TAG = "Permission";
     private SoundPool soundPool;
     private int soundSaveImage;
     private int soundWallpaper;
@@ -75,7 +82,6 @@ public class ImagesDetailActivity extends AppCompatActivity {
     private AnimatedVectorDrawable avd2;
     private AnimatedVectorDrawableCompat avd;
     private ImageView mainGreyHeart;
-    private ImageView liker;
     private CardView cardViewLike;
     private ImageView mainRedHeart;
     private ImageView heart;
@@ -100,7 +106,7 @@ public class ImagesDetailActivity extends AppCompatActivity {
         TextView textViewDownloads = findViewById(R.id.tvDownloadImageDetail);
         ImageView backIcon = findViewById(R.id.backIconImagesDetail);
         ImageView optionsIcon = findViewById(R.id.optionsIconImagesDetail);
-        liker = findViewById(R.id.ivImagesDetailLiker);
+        ImageView liker = findViewById(R.id.ivImagesDetailLiker);
 
         mainGreyHeart = findViewById(R.id.ivImagesDetailGreyHeart);
         cardViewLike = findViewById(R.id.cvImagesDetailLikerOptions);
@@ -110,6 +116,7 @@ public class ImagesDetailActivity extends AppCompatActivity {
         love = findViewById(R.id.ivImgDetailReactLove);
         sad = findViewById(R.id.ivImgDetailReactSad);
         shocked = findViewById(R.id.ivImgDetailReactShocked);
+        setBitmap();
 
 
         Animation reactBounceAnim = AnimationUtils.loadAnimation(this, R.anim.react_bounce_anim);
@@ -134,6 +141,7 @@ public class ImagesDetailActivity extends AppCompatActivity {
                 heart.startAnimation(reactBounceAnim);
             }
         });
+
         optionsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +150,6 @@ public class ImagesDetailActivity extends AppCompatActivity {
 
             }
         });
-
         happy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,20 +213,14 @@ public class ImagesDetailActivity extends AppCompatActivity {
         });
 
 
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build();
-            soundPool = new SoundPool.Builder()
-                    .setMaxStreams(1)
-                    .setAudioAttributes(audioAttributes)
-                    .build();
-        } else {
-            soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
-        }
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(1)
+                .setAudioAttributes(audioAttributes)
+                .build();
         soundSaveImage = soundPool.load(this, R.raw.sound_save_image, 1);
         soundWallpaper = soundPool.load(this, R.raw.sound_set_wallpaper, 1);
         soundLike = soundPool.load(this, R.raw.sound_like, 1);
@@ -298,21 +299,15 @@ public class ImagesDetailActivity extends AppCompatActivity {
 
 
 
+
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.save_images_detail) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                        PackageManager.PERMISSION_DENIED) {
-                    String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                    requestPermissions(permission, PERMISSION_STORAGE_CODE);
 
-                } else {
-                    downloadImage();
-                }
-
+            if (!allPermissionResultCheck()) {
+                requestPermissionStorageImages();
             } else {
                 downloadImage();
             }
@@ -324,7 +319,7 @@ public class ImagesDetailActivity extends AppCompatActivity {
             bitmap = drawable.getBitmap();
 
             try {
-                File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + "Cars from RollsRoyce.png");
+                File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + "Watches from Rolex.png");
                 FileOutputStream fOut = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
                 fOut.flush();
@@ -350,6 +345,60 @@ public class ImagesDetailActivity extends AppCompatActivity {
         }
         return super.onContextItemSelected(item);
     }
+    public boolean allPermissionResultCheck() {
+        return is_storage_image_permitted;
+    }
+
+    public void requestPermissionStorageImages() {
+        if (ContextCompat.checkSelfPermission(ImagesDetailActivity.this, required_permission[0]) == PackageManager.PERMISSION_GRANTED) {
+            is_storage_image_permitted = true;
+            downloadImage();
+        } else {
+            request_permission_launcher_storage_images.launch(required_permission[0]);
+        }
+    }
+    private ActivityResultLauncher<String> request_permission_launcher_storage_images =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(),
+                    isGranted -> {
+                        if (isGranted) {
+                            is_storage_image_permitted = true;
+                            downloadImage();
+                        } else {
+                            is_storage_image_permitted = false;
+                            Toasty.error(ImagesDetailActivity.this, "Permission denied...!", Toast.LENGTH_LONG).show();
+                            sendToSettingDialog();
+
+
+                        }
+                    });
+
+    public void sendToSettingDialog() {
+        new AlertDialog.Builder(ImagesDetailActivity.this)
+                .setTitle("Alert for Permission")
+                .setMessage("Go to Settings for Permissions")
+                .setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent();
+                        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        Uri uri = Uri.fromParts("package", getPackageName(), null);
+                        intent.setData(uri);
+                        startActivity(intent);
+                        dialogInterface.dismiss();
+
+                    }
+                })
+                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+
+                        finish();
+                    }
+                })
+                .show();
+    }
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -384,67 +433,76 @@ public class ImagesDetailActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == PERMISSION_STORAGE_CODE) {
-            if (grantResults.length > 0 && grantResults[0] ==
-                    PackageManager.PERMISSION_GRANTED) {
-                downloadImage();
-            } else {
-                Toasty.error(ImagesDetailActivity.this, "Permission denied...!", Toast.LENGTH_LONG).show();
 
-            }
-        }
-    }
 
     private void downloadImage() {
 
         soundPool.play(soundSaveImage, 1, 1, 0, 0, 1);
-        drawable = (BitmapDrawable) photoView.getDrawable();
-        bitmap = drawable.getBitmap();
-        File filePath = Environment.getExternalStorageDirectory();
-        File dir = new File(filePath.getAbsolutePath() + "/Cars from RollsRoyce/");
-        dir.mkdir();
-        File file = new File(dir, System.currentTimeMillis() + ".jpg");
+        drawable=(BitmapDrawable) photoView.getDrawable();
+        bitmap=drawable.getBitmap();
+
+        FileOutputStream fileOutputStream=null;
+
+        File sdCard = Environment.getExternalStorageDirectory();
+        File Directory=new File(sdCard.getAbsolutePath()+ "/Download/Watches from Rolex");
+        Directory.mkdir();
+
+        String filename=String.format("%d.jpg",System.currentTimeMillis());
+        File outfile=new File(Directory,filename);
+        Toasty.success(ImagesDetailActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
+        Toasty.info(ImagesDetailActivity.this, "Image saved in Download/Watches from Rolex", Toast.LENGTH_LONG).show();
         try {
-            outputStream = new FileOutputStream(file);
-            Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-            intent.setData(Uri.fromFile(file));
+            fileOutputStream=new FileOutputStream(outfile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,fileOutputStream);
+            fileOutputStream.flush();
+            fileOutputStream.close();
+
+            Intent intent=new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            intent.setData(Uri.fromFile(outfile));
             sendBroadcast(intent);
 
-        } catch (FileNotFoundException e) {
+        }catch (FileNotFoundException e){
             e.printStackTrace();
-        }
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-        Toasty.success(ImagesDetailActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
-        try {
-            outputStream.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            outputStream.close();
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
 
     private void setWallpaper() {
-        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
-        drawable = (BitmapDrawable) photoView.getDrawable();
-        bitmap = drawable.getBitmap();
-        try {
-            wallpaperManager.setBitmap(bitmap);
-            Toasty.success(ImagesDetailActivity.this, "Wallpaper Set Successfully", Toast.LENGTH_LONG).show();
-            soundPool.play(soundWallpaper, 1, 1, 0, 0, 1);
+        new AlertDialog.Builder(ImagesDetailActivity.this)
+                .setTitle("Alert for Permission")
+                .setMessage("Allow app to set wallpaper")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+                        try {
+                            wallpaperManager.setBitmap(bitmap);
+                            soundPool.play(soundWallpaper, 1, 1, 0, 0, 1);
+                            Toasty.success(ImagesDetailActivity.this, "Wallpaper Set Successfully", Toast.LENGTH_LONG).show();
 
 
-        } catch (IOException e) {
-            Toasty.error(ImagesDetailActivity.this, "Wallpaper Not Set", Toast.LENGTH_LONG).show();
+                        } catch (IOException e) {
+                            Toasty.error(ImagesDetailActivity.this, "Wallpaper Not Set", Toast.LENGTH_LONG).show();
 
 
-        }
+                        }
 
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+
+                    }
+                })
+                .show();
+
+
+    }
+    private void setBitmap() {
+        bitmap =((BitmapDrawable) photoView.getDrawable()).getBitmap();
     }
 
 }
