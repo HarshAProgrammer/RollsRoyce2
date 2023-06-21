@@ -319,7 +319,7 @@ public class ImagesDetailActivity extends AppCompatActivity {
             bitmap = drawable.getBitmap();
 
             try {
-                File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + "Watches from Rolex.png");
+                File file = new File(getApplicationContext().getExternalCacheDir(), File.separator + "Cars from Rolls Royce.png");
                 FileOutputStream fOut = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
                 fOut.flush();
@@ -444,13 +444,13 @@ public class ImagesDetailActivity extends AppCompatActivity {
         FileOutputStream fileOutputStream=null;
 
         File sdCard = Environment.getExternalStorageDirectory();
-        File Directory=new File(sdCard.getAbsolutePath()+ "/Download/Watches from Rolex");
+        File Directory=new File(sdCard.getAbsolutePath()+ "/Download/Cars from RollsRoyce");
         Directory.mkdir();
 
         String filename=String.format("%d.jpg",System.currentTimeMillis());
         File outfile=new File(Directory,filename);
         Toasty.success(ImagesDetailActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
-        Toasty.info(ImagesDetailActivity.this, "Image saved in Download/Watches from Rolex", Toast.LENGTH_LONG).show();
+        Toasty.info(ImagesDetailActivity.this, "Image saved in Download/Cars from RollsRoyce", Toast.LENGTH_LONG).show();
         try {
             fileOutputStream=new FileOutputStream(outfile);
             bitmap.compress(Bitmap.CompressFormat.JPEG,100,fileOutputStream);
