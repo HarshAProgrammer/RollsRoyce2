@@ -29,13 +29,16 @@
                 android:id="@+id/ivProfileRegistration"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_margin="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
                 android:contentDescription="@string/profile_pic_registration"
                 android:padding="3dp"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/ic_profile_pic" />
+                app:srcCompat="@drawable/ic_user_registration" />
 
         </RelativeLayout>
 

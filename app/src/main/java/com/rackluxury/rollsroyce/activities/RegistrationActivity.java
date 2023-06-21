@@ -235,6 +235,8 @@ public class RegistrationActivity extends AppCompatActivity implements
                                 regButton.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE, null);
                                 regButton.setEnabled(true);
                                 Toasty.error(RegistrationActivity.this, "Registration Failed", Toast.LENGTH_LONG).show();
+                                Toasty.info(RegistrationActivity.this, "Make sure you have uploaded a profile pic", Toast.LENGTH_LONG).show();
+
 
                             }
 
