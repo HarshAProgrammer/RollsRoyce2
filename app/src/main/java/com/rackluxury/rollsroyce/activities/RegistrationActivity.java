@@ -1,18 +1,19 @@
 package com.rackluxury.rollsroyce.activities;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Patterns;
@@ -25,10 +26,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -45,7 +51,7 @@ import com.rackluxury.rollsroyce.R;
 import com.rackluxury.rollsroyce.adapters.UserProfile;
 import com.royrodriguez.transitionbutton.TransitionButton;
 
-import java.io.IOException;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 import es.dmoral.toasty.Toasty;
@@ -56,7 +62,15 @@ public class RegistrationActivity extends AppCompatActivity implements
 
     public static final int SWIPE_THRESHOLD = 100;
     public static final int SWIPE_VELOCITY_THRESHOLD = 100;
-    private static final int PERMISSION_STORAGE_CODE = 1000;
+
+    String[] required_permission = new String[]{
+            Manifest.permission.READ_MEDIA_IMAGES,
+    };
+
+    boolean is_storage_image_permitted = false;
+    String TAG = "Permission";
+
+    ActivityResultLauncher<String> galleryLauncher;
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile(
                     "(?=.*[0-9])" +
@@ -104,19 +118,6 @@ public class RegistrationActivity extends AppCompatActivity implements
         }
     };
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
-            imagePath = data.getData();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
-                userProfilePic.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +143,7 @@ public class RegistrationActivity extends AppCompatActivity implements
 
     }
 
+
     private void setupUIViews() {
         textInputEmail = findViewById(R.id.registration_email_layout);
         textInputUsername = findViewById(R.id.registration_username_layout);
@@ -156,6 +158,13 @@ public class RegistrationActivity extends AppCompatActivity implements
         userLogin = findViewById(R.id.tvUserLogin);
         gestureDetector = new GestureDetector(RegistrationActivity.this, this);
         coins = getSharedPreferences("Rewards", MODE_PRIVATE);
+
+        galleryLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+            @Override
+            public void onActivityResult(Uri uri) {
+                userProfilePic.setImageURI(uri);
+            }
+        });
 
 
     }
@@ -176,11 +185,12 @@ public class RegistrationActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
 
-                String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
-                requestPermissions(permission, PERMISSION_STORAGE_CODE);
 
-
-                getProfilePic();
+                if (!allPermissionResultCheck()) {
+                    requestPermissionStorageImages();
+                } else {
+                    getProfilePic();
+                }
 
 
             }
@@ -256,36 +266,88 @@ public class RegistrationActivity extends AppCompatActivity implements
         userPassword.addTextChangedListener(registrationTextWatcher);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_STORAGE_CODE) {
-            if (grantResults.length > 0 && grantResults[0] ==
-                    PackageManager.PERMISSION_GRANTED) {
-                getProfilePic();
+    public boolean allPermissionResultCheck() {
+        return is_storage_image_permitted;
+    }
 
-            } else {
-                Toasty.error(RegistrationActivity.this, "Permission denied...!", Toast.LENGTH_LONG).show();
+    public void requestPermissionStorageImages() {
+        if (ContextCompat.checkSelfPermission(RegistrationActivity.this, required_permission[0]) == PackageManager.PERMISSION_GRANTED) {
+            is_storage_image_permitted = true;
+            getProfilePic();
 
-            }
+        } else {
+            request_permission_launcher_storage_images.launch(required_permission[0]);
         }
     }
 
+    private ActivityResultLauncher<String> request_permission_launcher_storage_images =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(),
+                    isGranted -> {
+                        if (isGranted) {
+                            is_storage_image_permitted = true;
+                            getProfilePic();
+                        } else {
+                            is_storage_image_permitted = false;
+                            Toasty.error(RegistrationActivity.this, "Permission denied...!", Toast.LENGTH_LONG).show();
+                            sendToSettingDialog();
+
+
+                        }
+                    });
+
+    public void sendToSettingDialog() {
+        new AlertDialog.Builder(RegistrationActivity.this)
+                .setTitle("Alert for Permission")
+                .setMessage("Go to Settings for Permissions")
+                .setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent();
+                        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        Uri uri = Uri.fromParts("package", getPackageName(), null);
+                        intent.setData(uri);
+                        startActivity(intent);
+                        dialogInterface.dismiss();
+
+                    }
+                })
+                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+
+                        finish();
+                    }
+                })
+                .show();
+    }
+
+
     private void getProfilePic() {
-        Intent intent = new Intent();
-        intent.setType("images/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE);
+
+        ImagePicker.with(RegistrationActivity.this)
+                .crop()                    //Crop image(Optional), Check Customization for more option
+                .compress(1024)            //Final image size will be less than 1 MB(Optional)
+                .maxResultSize(1080, 1080)    //Final image resolution will be less than 1080 x 1080(Optional)
+                .start();
         Animatoo.animateDiagonal(RegistrationActivity.this);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Uri uri = data.getData();
+        userProfilePic.setImageURI(uri);
+
     }
 
     private boolean validateReg() {
         boolean result;
 
-        String usernameInput = textInputUsername.getEditText().getText().toString().trim();
-        String emailInput = textInputEmail.getEditText().getText().toString().trim();
-        String phoneInput = textInputPhone.getEditText().getText().toString().trim();
-        String passwordInput = textInputPassword.getEditText().getText().toString().trim();
+        String usernameInput = Objects.requireNonNull(textInputUsername.getEditText()).getText().toString().trim();
+        String emailInput = Objects.requireNonNull(textInputEmail.getEditText()).getText().toString().trim();
+        String phoneInput = Objects.requireNonNull(textInputPhone.getEditText()).getText().toString().trim();
+        String passwordInput = Objects.requireNonNull(textInputPassword.getEditText()).getText().toString().trim();
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
 
@@ -305,10 +367,6 @@ public class RegistrationActivity extends AppCompatActivity implements
             textInputPhone.setError(null);
             textInputPassword.setError("Password should contain at least 4 characters with no white spaces and at least 1 digit, 1 letter and 1 special character.");
             result = false;
-        } else if (imagePath == null) {
-            textInputPassword.setError(null);
-            result = false;
-            Toasty.warning(RegistrationActivity.this, "Please Upload a Profile Pic ", Toast.LENGTH_LONG).show();
         } else if (null == activeNetwork) {
             textInputPassword.setError(null);
             setNoInternetDialogue();
