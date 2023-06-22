@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".blog.BlogCheckerActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/topLayoutChecker"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="@color/transparent"
+            android:outlineSpotShadowColor="@color/transparent"
+            android:background="@color/transparent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarBlogCheckerActivity"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@drawable/searchappbar"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:text="Cars from RollsRoyce"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+            <ImageView
+                android:layout_width="200dp"
+                android:src="@drawable/img_blog_checker"
+                android:adjustViewBounds="true"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/advantagesBlogChecker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayoutChecker"
+        app:layout_constraintBottom_toTopOf="@id/advantage1BlogChecker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Benefits:"
+        android:fontFamily="@font/harmonia_sans_bold"
+        android:layout_marginStart="20dp"
+        android:textSize="16sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/advantage1BlogChecker"
+        android:fontFamily="@font/harmonia_sans_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/advantagesBlogChecker"
+        android:layout_width="match_parent"
+        android:textSize="11sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/advantageBlog"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/tvTimerInfoExpensive"
+        android:fontFamily="@font/harmonia_sans_regular"
+        app:layout_constraintBottom_toTopOf="@+id/tvTimerBlog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:textSize="11sp"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"
+        android:text="@string/purchase_information_timer"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/tvTimerBlog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/advantage1BlogChecker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/purchaseDesBlogChecker"
+        android:text="00:00"
+        android:textColor="@color/colorRed"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/purchaseNumBlogChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/open_sans_condensed_light"
+        app:layout_constraintEnd_toStartOf="@+id/purchaseDesBlogChecker"
+        app:layout_constraintBottom_toTopOf="@+id/peopleNumBlogChecker"/>
+    <TextView
+        android:id="@+id/purchaseDesBlogChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:layout_marginStart="25dp"
+        android:text="@string/checker_purchase_description"
+        android:fontFamily="@font/open_sans_condensed_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/peopleDesBlogChecker"/>
+    <TextView
+        android:id="@+id/peopleNumBlogChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:layout_marginStart="25dp"
+        android:fontFamily="@font/open_sans_condensed_light"
+        app:layout_constraintEnd_toStartOf="@+id/peopleDesBlogChecker"
+        app:layout_constraintBottom_toTopOf="@+id/btnBlogChecker"/>
+    <TextView
+        android:id="@+id/peopleDesBlogChecker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:layout_marginStart="25dp"
+        android:text="@string/checker_people_description"
+        android:fontFamily="@font/open_sans_condensed_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnBlogChecker"/>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBlogChecker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/button_bg"
+        android:elevation="10dp"
+        android:text="Purchase  $352"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        app:cornerRadius="30dp"
+        app:rippleColor="#00FFFFFF" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

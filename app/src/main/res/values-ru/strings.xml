@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- This is a duplicate, and I forgot to add another "д" -->
+
+    <!-- Idk what this is supposed to be in english -->
+
+    <!-- Idk what this is supposed to mean. -->
+    <string name="search">"Поиск"</string>
+    <string name="ok">"ОК"</string>
+    <string name="share">"Поделиться"</string>
+
+    <!-- I am not sure how to unify this one. Plural form differs depending on numerals. -->
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- What's the context of this? I can't find it in-App -->
+
+    <!-- Estava "incrições" (sem o S depois no N) -->
+
+    <!-- Acho que pode deixar o "reddit" descapitalizado que nem no original mesmo -->
+    <string name="search">"Buscar"</string>
+    <string name="ok">"OK"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+    <string name="share">"Compartilhar"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+</resources>

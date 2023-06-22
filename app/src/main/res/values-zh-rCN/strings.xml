@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 参考国内一些评论，将“Subreddit”翻译为“社区” -->
+
+    <!-- 这个感觉不必翻译 -->
+
+    <!-- reddit的“板块”和“子板块”是怎么翻译的，我分辨不了，reddit有“子板块”的概念吗？我全都翻译为“板块”了。 -->
+    <string name="search">"搜索"</string>
+    <string name="ok">"确定"</string>
+
+    <!-- 请问这个是怎么回事？“Padding”没有翻译，是有特殊的用词吗？ -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- 这个应该不做翻译为好，它是指示infinity社区位置的。在关于界面 -->
+    <string name="share">"分享"</string>
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- 是不是翻译为“已读消息文字颜色”更好一点？ -->
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- “Awarded”暂时翻译为“被赞赏的” -->
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- What is “Author Flair”？ -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- 此项也建议不要翻译，它大概是主题界面预览时显示社区位置的 -->
+
+    <!-- Fuzzy -->
+
+    <!-- Don't know how to translate it, never seen this before. -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Fuzzy -->
+
+    <!-- Sort by type? -->
+
+    <!-- Fuzzy -->
+</resources>
